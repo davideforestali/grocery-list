@@ -1,0 +1,32 @@
+.form-group {
+    margin-bottom: .5rem;
+  
+    &__label {
+      display: inline-block;
+      color: $gray;
+      margin-right: .5rem;
+      margin-bottom: .2rem;
+    }
+  
+    &__input {
+      border: 1px solid $blue-cold;
+      padding: .5rem .8rem;
+      width: 100%;
+      border-radius: .5rem;
+      display: block;
+      
+      @include breakpoint(xs) {
+        width: auto;
+      }
+  
+      &--inline {
+        margin-bottom: .5rem;
+        display: inline-block;
+        
+        @include breakpoint(xs) {
+          margin-right: .5rem;
+        }
+      }
+    }
+  }
+  

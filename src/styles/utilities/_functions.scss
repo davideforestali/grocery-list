@@ -1,0 +1,13 @@
+// General functions
+
+// PX to REM  and PX to EM 
+// !!!!!!!!! no longer using. I dont think in px aymore !!!!!!!!!
+ @function rem($pixels, $base: 16px) {
+  @return $pixels / $base * 1rem;
+}
+
+@function em($pixels, $base: 16px) {
+  @return $pixels / $base * 1em;
+} 
+
+

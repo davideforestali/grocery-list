@@ -1,0 +1,128 @@
+
+// All the variables
+
+// COLORS
+
+$white: #fff;
+$gray: #8c8c8c;
+$gray-light: #ccc;
+$black: #000;
+$black-light: #333;
+$black-opacity-5: rgba(0,0,0,0.4);
+$navy: #053742;
+$blue: #39A2DB;
+$blue-cold: #A2DBFA;
+$blue-winter: #E8F0F2;
+
+// FONT
+
+$font-primary: 'Quicksand', sans-serif;;
+$line-height-base: 1.5;
+
+// font sizes
+/* After many researches about typography modular scale and how it should be used,
+(ref: https://www.creativebloq.com/how-to/the-rules-of-responsive-web-typography),
+I decided not to precisely follow a ratio scale, but rather get inspired by a ratio,
+and keeping numbers simple and without many decimals. Ratio here is 1.2 */
+
+$font-size-base: 1rem; // rem makes it scalable. default is 16px on browsers
+
+$font-size-display1: 5rem;
+$font-size-display2: 3.5rem;
+$font-size-display3: 2.5rem;
+$font-size-display4: 2rem;
+
+$font-size-h1: 1.75rem;
+$font-size-h2: 1.5rem;
+$font-size-h3: 1.25rem;
+$font-size-h4: $font-size-base;
+
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
+
+// font weight
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// SPACING
+
+/* After many researches about Vertical Rythm concept and how it should be implemented
+using spaces and line heights based on the root line height (ref: https://zellwk.com/blog/why-vertical-rhythms/),
+I realized, with the help of this other article https://zellwk.com/blog/web-typography-broken/, 
+that the most important thing is Repetition, which doens't mean spaces must be multiples 
+of the root line height (which comes with many manual calculations, or the use of a external tool), 
+but any other number is fine, so I decided to use the multiple of the root font size (0.25rem, 0.5rem, 1rem..), 
+and consequently I also decided not to use ems for spacing since again, it'd lead to many calculations, hence I use rems,
+cause I prefer the semplicity of calculations they come with, over the scalability ems can provide.*/
+
+// LAYOUT	
+
+// Breakpoints 
+/* I use px for bp, here's why https://adamwathan.me/dont-use-em-for-media-queries/ 
+Note: don't change the key names because they're use to create 
+container-max-widths (see below map) and columns (like col-md, see @mixin make-columns) */
+$breakpoints: (
+	'xs': 430px,
+	'sm': 576px,
+	'md': 768px,
+	'lg' : 992px,
+	'xl' : 1200px
+);
+
+// Containers
+// the keys must match with the keys of $breakpoints
+$container-max-widths: (
+	'sm': 540px,
+	'md': 720px,
+	'lg': 960px,
+	'xl': 1140px
+);
+
+// GRID
+
+$grid-columns: 12;
+
+// BUTTONS
+
+$btn-border-width: 1px;
+
+// buttons colors
+$btn-primary: $navy;
+$btn-secondary: $blue;
+
+// ICONS
+
+// Arrow
+$arrow-size: 2rem;
+$arrow-size-sm: 1rem;
+
+// TRANSITIONS 
+
+$transition-base: all 0.3s ease-in-out;
+$transition-height: max-height 0.3s ease-in-out;
+$transition-bg: background-color 0.3s ease-in-out;
+$transition-color: color 0.3s ease-in-out;
+$transition-fade: opacity 0.15s linear;
+$transition-collapse: height 0.35s ease;
+$transition-cubic-bezier: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+
+// PATH VARIABLES
+
+$ImagesPath: '/assets/img';
+
+// Cdn paths
+$cdnPath: 'https://sample.com/resources';
+$cdnFontsPath: 'https://sample.com/resources/fonts';
+$cdnImagesPath: 'https://sample.com/resources/images';
+
+// Z-INDEX LAYERS
+
+$z-layers: (
+	'under-all': -1,
+	'default': 1,
+	'header': 110,
+	'loading': 200,
+	'back-to-top': 2
+);

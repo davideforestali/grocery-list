@@ -1,0 +1,33 @@
+@import '../../../styles/utilities/settings';
+@import '../../../styles/utilities/mixins';
+
+.grocery-list {
+  margin-bottom: 2rem;
+
+  &__header {
+    margin-bottom: 1rem;
+    
+    @include breakpoint(md) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__category-section {
+    margin-bottom: 1.5rem;
+  }
+
+  &__category-title {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+  
+  &__item {
+    cursor: pointer;
+  }
+
+  &__origin {
+    margin-right: .5rem;
+  }
+}

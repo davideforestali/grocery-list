@@ -1,0 +1,224 @@
+// General class and placeholders helpers
+
+.box,
+%box {
+  padding: 1rem;
+  background-color: $white;
+  box-shadow: 0px 0px 10px #00000030;
+  border-radius: .5rem;
+  & + .box {
+    margin-top: 2rem;
+  }
+}
+
+.actions-msg-popup {
+  padding: 1rem;
+  background-color: #ffffffbd;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 7rem;
+  box-shadow: 0px 0px 10px #00000012;
+  border-radius: 5rem;
+  width: fit-content;
+
+  @include breakpoint(md) {
+    bottom: 2rem;
+  }
+}
+
+.tooltip {
+  position: relative;
+
+  &__label {
+    font-size: $font-size-h2;
+    line-height: 1;
+  }
+
+  &__content {
+    position: absolute;
+    width: 12rem;
+    bottom: 1.8rem;
+    left: -50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    padding: .5rem
+  }
+
+  &:hover {
+    .tooltip__content {
+      visibility: visible;
+    }
+  }
+}
+
+.list-item-index {
+  height: 1.7rem;
+  background: #e8f0f2;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0.2rem 0.7rem;
+  margin-right: 0.7rem;
+  font-size: $font-size-sm;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  margin-right: .5rem;
+  
+  &__label {
+    background: transparent;
+    padding: 0.3rem 1rem;
+    border-radius: 3rem;
+    display: inline-block;
+    color: $gray;
+    border: 1px solid $gray-light;
+    cursor: pointer;
+  }
+
+  &__input {
+    appearance: none;
+
+    &:checked {
+      + .custom-checkbox__label {
+        background-color: $blue;
+        border-color: $blue;
+        color: $white
+      }
+    }
+  }
+
+  & + .custom-checkbox {
+    margin-top: .5rem;
+  }
+}
+
+.ingredient-edit {
+  &__input {
+    width: 100% !important;
+    margin-bottom: .5rem;
+  }
+
+  @include breakpoint(md) {
+    display: flex;
+  
+    &__amount {
+      flex: 1;
+    }
+  
+    &__unit {
+      flex: 1;
+    }
+  
+    &__name {
+      flex: 3;
+    }
+  
+    &__category {
+      flex: 3;
+    }
+
+    &__input {
+      margin-right: .5rem;
+      margin-bottom: 0;
+    }
+  
+    &__delete {
+      flex: none;
+      width: auto;
+    }
+  }
+}
+
+.main-cta {
+  position: fixed;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0px 0px .5rem #00000030;
+
+  @include breakpoint(md) {
+    position: unset;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.list-item {
+  background-color: $blue-winter;
+  margin-bottom: .5rem;
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  &--fw-edit {
+    flex-direction: column;
+    align-items: flex-end;
+
+    .list-item__edit {
+      order: 1;
+    }
+
+    .list-item__actions {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    flex: 2;
+    padding: .5rem 0 .5rem 1rem;
+    
+    &--hidden {
+      display: none;
+    }
+  }
+  
+  &__name {
+    font-weight: 600;
+    color: $navy;
+  }
+
+  &__edit {
+    padding: .5rem;
+    display: none;
+    flex: 1;
+    width: 100%;
+    margin-bottom: 0 !important;
+
+    &--visible {
+      display: block;
+
+      @include breakpoint(md) {
+        display: inherit;
+      }
+    }
+  }
+
+  &__actions {
+    padding: .5rem 1rem .5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__actions-container {
+    display: flex;
+    margin-left: .5rem;
+    align-items: center;
+  }
+
+  &--checked {
+    background-color: $blue-cold;
+
+    .list-item__body {
+      text-decoration: line-through;
+    }
+  }
+
+  &__editing-label {
+    flex: 1;
+  }
+}

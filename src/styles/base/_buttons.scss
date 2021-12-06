@@ -1,0 +1,35 @@
+@import './utilities/settings';
+@import './utilities/mixins';
+
+.btn-primary {
+  @include btn-base($btn-primary);
+  @include btn-hover-effect-reflection;
+}
+
+.btn-secondary {
+  @include btn-base($btn-secondary);
+  @include btn-hover-effect-reflection;
+}
+
+.btn-tertiary {
+  @include btn-base(#f5f5f5, black);
+  @include btn-hover-effect-reflection;
+}
+
+.btn--lg {
+  font-size: $font-size-h4;
+  padding: 1rem 2rem;
+}
+
+.btn--sm,
+%btn--sm {
+  padding: .4rem 1.4rem;
+}
+
+.btn--xs {
+  padding: .2rem .8rem;
+}
+
+[class*="btn-"] + [class*="btn-"] {
+    margin-left: .5rem;
+}

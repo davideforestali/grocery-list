@@ -1,0 +1,13 @@
+@import '../../styles/utilities/mixins';
+@import '../../styles/utilities/settings';
+
+.insert-input {
+  height: 2.2rem;
+  display: flex;
+
+  &__control {
+    @include breakpoint(xs) {
+      min-width: 20rem;
+    }
+  }
+}
